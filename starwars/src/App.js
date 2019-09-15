@@ -33,7 +33,7 @@ const App = () => {
       }
 
       setStarwarsPages(pages);
-      setCurrentPage('1');
+      setCurrentPage(pages[0]);
       setstarwarsCharacters(results);
     });
   }, []);
