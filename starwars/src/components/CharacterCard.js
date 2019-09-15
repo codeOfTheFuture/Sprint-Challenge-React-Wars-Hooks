@@ -7,12 +7,15 @@ const CardWrapper = styled.div`
   margin: 1rem;
   border-radius: 5px;
   position: relative;
+  cursor: pointer;
 
   &:hover {
     background-image: url(/assets/hyperspace.gif);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    border: 3px solid #fff;
+    margin: 0.81rem;
   }
 `;
 
@@ -29,13 +32,21 @@ const Card = styled.div`
   }
 `;
 
+const Character = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  margin: 0 2rem;
+`;
+
 const CharacterDetails = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  margin-left: 12rem;
+  justify-content: center;
+  align-items: center;
   p {
-    width: 10rem;
+    width: 8rem;
     text-align: center;
   }
 `;
@@ -43,6 +54,7 @@ const CharacterDetails = styled.div`
 function CharacterCard(props) {
   const {
     character: {
+      image,
       name,
       birth_year,
       eye_color,
@@ -60,17 +72,20 @@ function CharacterCard(props) {
     <CardWrapper>
       <Card className='character'>
         <h2>{name}</h2>
-        <CharacterDetails>
-          <p>{`Gender: ${gender}`}</p>
-          <p>{`Birth Year: ${birth_year}`}</p>
-          <p>{`Height: ${height}`}</p>
-          <p>{`Mass: ${mass}`}</p>
-          <p>{`Hair Color: ${hair_color}`}</p>
-          <p>{`Eye Color: ${eye_color}`}</p>
-          <p>{`Skin Color: ${skin_color}`}</p>
-          <p>{`Skin Color: ${skin_color}`}</p>
-          <p>{`No. of Films: ${films.length}`}</p>
-        </CharacterDetails>
+        <Character>
+          <img src={`${image}`} alt={`${name}`} />
+          <CharacterDetails>
+            <p>{`Gender: ${gender}`}</p>
+            <p>{`Birth Year: ${birth_year}`}</p>
+            <p>{`Height: ${height}`}</p>
+            <p>{`Mass: ${mass}`}</p>
+            <p>{`Hair Color: ${hair_color}`}</p>
+            <p>{`Eye Color: ${eye_color}`}</p>
+            <p>{`Skin Color: ${skin_color}`}</p>
+            <p>{`Skin Color: ${skin_color}`}</p>
+            <p>{`No. of Films: ${films.length}`}</p>
+          </CharacterDetails>
+        </Character>
       </Card>
     </CardWrapper>
   );

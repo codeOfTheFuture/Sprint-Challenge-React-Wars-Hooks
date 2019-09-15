@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import CharacterCard from './CharacterCard';
 
 const Container = styled.div`
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding: 50px;
   display: flex;
@@ -14,7 +14,7 @@ const Container = styled.div`
 
 function CharacterList(props) {
   const { starwarsCharacters } = props;
-
+  console.log('characterList', starwarsCharacters);
   return (
     <Container className='characterList'>
       {starwarsCharacters.map((char, index) => (
